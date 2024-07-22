@@ -33,7 +33,7 @@ jobs:
           
         - name: Archive Test Result
           uses: actions/upload-artifact@v3
-          if: failure() && (steps.unit-test-step.outcome == success() || steps.unit-test-step.outcome == failure())
+          if: failure() && (steps.unit-test-step.outcome == 'success' || steps.unit-test-step.outcome == 'failure')
           with:
             name: Mocha-Test-Result
             path: test-results.xml
